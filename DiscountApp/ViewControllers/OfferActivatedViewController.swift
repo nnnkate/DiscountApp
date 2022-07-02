@@ -10,17 +10,26 @@ import SnapKit
 
 class PopUpViewController: UIViewController {
     
+    // MARK: - Private properties
+    
+    private let isPad = UIDevice.current.userInterfaceIdiom == .pad
+    
     // MARK: - Views
     
     private lazy var messageView: UIView = {
         let messageView = UIView()
+        messageView.layer.cornerRadius = 12
         //messageView.frame = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: view.bounds.width / 3, height: view.bounds.height / 3)
+        messageView.backgroundColor = .getCustomDarkBlueColor()
         
         return messageView
     }()
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
+        let fontSize = CGFloat(isPad ? 55 : 37).adaptedFontSize
+        titleLabel.font = .systemFont(ofSize: fontSize, weight: .bold)
+        titleLabel.textColor = .white
         titleLabel.text = "Great!"
         
         return titleLabel
@@ -43,7 +52,7 @@ class PopUpViewController: UIViewController {
 private extension PopUpViewController {
     
     func setupAppearance() {
-        messageView.backgroundColor = .systemBlue
+        
     }
     
     func addSubviews() {
@@ -54,7 +63,8 @@ private extension PopUpViewController {
     func setupLayout() {
         messageView.snp.makeConstraints { make in
             make.centerY.centerX.equalToSuperview()
-            make.width.height.equalToSuperview().multipliedBy(0.33)
+            make.width.equalToSuperview().multipliedBy(0.38)
+            make.height.equalTo(messageView.snp.width).multipliedBy(0.4)
         }
         
         titleLabel.snp.makeConstraints { make in
