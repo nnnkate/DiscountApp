@@ -1,0 +1,18 @@
+//
+//  UIColor+Extensions.swift
+//  DiscountApp
+//
+//  Created by Ekaterina Nedelko on 30.06.22.
+//
+
+import UIKit
+
+extension UIColor {
+    class func getCustomPinkColor() -> UIColor {
+        UIColor(red: 0.92, green: 0.28, blue: 0.73, alpha: 1)
+    }
+
+    class func getCustomBlueColor() -> UIColor {
+        UIColor(red: 0.25, green: 0.27, blue: 0.6, alpha: 1)
+    }
+}
