@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7DE86A98404E1A6C34FFEF6F /* Pods_DiscountApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357A7297501071952FE98474 /* Pods_DiscountApp.framework */; };
+		852D920B2870FB4200D57831 /* OfferManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852D920A2870FB4200D57831 /* OfferManager.swift */; };
+		852D920D2870FDFE00D57831 /* OfferManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852D920C2870FDFE00D57831 /* OfferManagerDelegate.swift */; };
 		8533AF89286CBCBD00855B5D /* AdditionalOptionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533AF88286CBCBD00855B5D /* AdditionalOptionsButton.swift */; };
 		8533AF8B286CBF9C00855B5D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533AF8A286CBF9C00855B5D /* RoundedButton.swift */; };
 		8533AF8E286CC2AB00855B5D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533AF8D286CC2AB00855B5D /* UIView+Extensions.swift */; };
@@ -17,11 +19,11 @@
 		8533AF9A286E359800855B5D /* TimerManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533AF99286E359800855B5D /* TimerManagerDelegate.swift */; };
 		8533AF9C286E3A2A00855B5D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533AF9B286E3A2A00855B5D /* Int+Extensions.swift */; };
 		8533AF9E286E3D5900855B5D /* TimerComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533AF9D286E3D5900855B5D /* TimerComponentView.swift */; };
-		85931008286F9FBC008549D9 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85931007286F9FBB008549D9 /* PopUpViewController.swift */; };
+		85931008286F9FBC008549D9 /* OfferActivatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85931007286F9FBB008549D9 /* OfferActivatedViewController.swift */; };
 		8593101A28706BED008549D9 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593101928706BED008549D9 /* CGFloat+Extensions.swift */; };
 		85EF39F0286CA12500BDFC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF39EF286CA12500BDFC60 /* AppDelegate.swift */; };
 		85EF39F2286CA12500BDFC60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF39F1286CA12500BDFC60 /* SceneDelegate.swift */; };
-		85EF39F4286CA12500BDFC60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF39F3286CA12500BDFC60 /* ViewController.swift */; };
+		85EF39F4286CA12500BDFC60 /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF39F3286CA12500BDFC60 /* OfferViewController.swift */; };
 		85EF39F9286CA12800BDFC60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85EF39F8286CA12800BDFC60 /* Assets.xcassets */; };
 		85EF39FC286CA12800BDFC60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85EF39FA286CA12800BDFC60 /* LaunchScreen.storyboard */; };
 		85F6DFC9286E560A004438A2 /* SeparatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F6DFC8286E560A004438A2 /* SeparatorLabel.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		357A7297501071952FE98474 /* Pods_DiscountApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscountApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE23049144C4ADE6CD03277 /* Pods-DiscountApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscountApp.release.xcconfig"; path = "Target Support Files/Pods-DiscountApp/Pods-DiscountApp.release.xcconfig"; sourceTree = "<group>"; };
+		852D920A2870FB4200D57831 /* OfferManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferManager.swift; sourceTree = "<group>"; };
+		852D920C2870FDFE00D57831 /* OfferManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferManagerDelegate.swift; sourceTree = "<group>"; };
 		8533AF88286CBCBD00855B5D /* AdditionalOptionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalOptionsButton.swift; sourceTree = "<group>"; };
 		8533AF8A286CBF9C00855B5D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		8533AF8D286CC2AB00855B5D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -39,12 +43,12 @@
 		8533AF99286E359800855B5D /* TimerManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManagerDelegate.swift; sourceTree = "<group>"; };
 		8533AF9B286E3A2A00855B5D /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		8533AF9D286E3D5900855B5D /* TimerComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponentView.swift; sourceTree = "<group>"; };
-		85931007286F9FBB008549D9 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		85931007286F9FBB008549D9 /* OfferActivatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferActivatedViewController.swift; sourceTree = "<group>"; };
 		8593101928706BED008549D9 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		85EF39EC286CA12500BDFC60 /* DiscountApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscountApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EF39EF286CA12500BDFC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85EF39F1286CA12500BDFC60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		85EF39F3286CA12500BDFC60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85EF39F3286CA12500BDFC60 /* OfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
 		85EF39F8286CA12800BDFC60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85EF39FB286CA12800BDFC60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85EF39FD286CA12800BDFC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				8533AF95286E307000855B5D /* TimerManager.swift */,
+				852D920A2870FB4200D57831 /* OfferManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				8533AF99286E359800855B5D /* TimerManagerDelegate.swift */,
+				852D920C2870FDFE00D57831 /* OfferManagerDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -190,8 +196,8 @@
 		85EF3A05286CA1EE00BDFC60 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				85EF39F3286CA12500BDFC60 /* ViewController.swift */,
-				85931007286F9FBB008549D9 /* PopUpViewController.swift */,
+				85EF39F3286CA12500BDFC60 /* OfferViewController.swift */,
+				85931007286F9FBB008549D9 /* OfferActivatedViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -322,14 +328,16 @@
 				8593101A28706BED008549D9 /* CGFloat+Extensions.swift in Sources */,
 				8533AF9C286E3A2A00855B5D /* Int+Extensions.swift in Sources */,
 				8533AF9E286E3D5900855B5D /* TimerComponentView.swift in Sources */,
-				85EF39F4286CA12500BDFC60 /* ViewController.swift in Sources */,
+				85EF39F4286CA12500BDFC60 /* OfferViewController.swift in Sources */,
 				8533AF90286DDED800855B5D /* UIColor+Extensions.swift in Sources */,
 				8533AF96286E307000855B5D /* TimerManager.swift in Sources */,
 				8533AF8B286CBF9C00855B5D /* RoundedButton.swift in Sources */,
 				85EF39F0286CA12500BDFC60 /* AppDelegate.swift in Sources */,
 				8533AF8E286CC2AB00855B5D /* UIView+Extensions.swift in Sources */,
+				852D920D2870FDFE00D57831 /* OfferManagerDelegate.swift in Sources */,
+				852D920B2870FB4200D57831 /* OfferManager.swift in Sources */,
 				8533AF9A286E359800855B5D /* TimerManagerDelegate.swift in Sources */,
-				85931008286F9FBC008549D9 /* PopUpViewController.swift in Sources */,
+				85931008286F9FBC008549D9 /* OfferActivatedViewController.swift in Sources */,
 				8533AF89286CBCBD00855B5D /* AdditionalOptionsButton.swift in Sources */,
 				85EF39F2286CA12500BDFC60 /* SceneDelegate.swift in Sources */,
 				85F6DFC9286E560A004438A2 /* SeparatorLabel.swift in Sources */,

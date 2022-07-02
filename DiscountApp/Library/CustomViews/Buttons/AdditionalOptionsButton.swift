@@ -14,7 +14,7 @@ final class AdditionalOptionsButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupAppearance()
+        self.setupAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -27,8 +27,9 @@ final class AdditionalOptionsButton: UIButton {
 private extension AdditionalOptionsButton {
     func setupAppearance() {
         setTitleColor(.gray, for: .normal)
+        let fontSize = CGFloat(UIDevice.current.userInterfaceIdiom == .pad ? 14 : 10).adaptedFontSize
+        titleLabel?.font = .systemFont(ofSize: fontSize, weight: .regular)
         titleLabel?.adjustsFontForContentSizeCategory = true
-        titleLabel?.font = .systemFont(ofSize: 10, weight: .regular)
     }
 }
 

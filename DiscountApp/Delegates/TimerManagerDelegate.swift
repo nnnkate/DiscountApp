@@ -7,4 +7,6 @@
 
 protocol TimerManagerDelegate: AnyObject {
     func updateTimer(_ timerCounter: Int)
+    func startTimer()
+    func cancelTimer()
 }

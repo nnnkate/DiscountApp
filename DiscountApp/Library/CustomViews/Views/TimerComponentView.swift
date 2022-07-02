@@ -31,9 +31,9 @@ class TimerComponentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        setupAppearance()
-        addSubviews()
-        setupLayout()
+        self.setupAppearance()
+        self.addSubviews()
+        self.setupLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -45,12 +45,12 @@ class TimerComponentView: UIView {
 
 private extension TimerComponentView {
     func setupAppearance() {
-        self.layer.cornerRadius = 12
-        self.backgroundColor = .darkGray
+        layer.cornerRadius = 12
+        backgroundColor = .darkGray
     }
     
     func addSubviews() {
-        self.addSubview(valueLabel)
+        addSubview(valueLabel)
     }
     
     func setupLayout() {

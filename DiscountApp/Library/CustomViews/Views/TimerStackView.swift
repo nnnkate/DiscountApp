@@ -21,9 +21,9 @@ class TimerStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        setupAppearance()
-        addSubviews()
-        setupLayout()
+        self.setupAppearance()
+        self.addSubviews()
+        self.setupLayout()
     }
     
     required init(coder: NSCoder) {
@@ -36,19 +36,19 @@ class TimerStackView: UIStackView {
 
 private extension TimerStackView {
     func setupAppearance() {
-        self.distribution = .fillProportionally
-        self.axis = .horizontal
-        self.spacing = 5
+        distribution = .fillProportionally
+        axis = .horizontal
+        spacing = 5
     }
     
     func addSubviews() {
-        self.addArrangedSubview(daysComponent)
-        self.addArrangedSubview(SeparatorLabel())
-        self.addArrangedSubview(hoursComponent)
-        self.addArrangedSubview(SeparatorLabel())
-        self.addArrangedSubview(minutesComponent)
-        self.addArrangedSubview(SeparatorLabel())
-        self.addArrangedSubview(secondsComponent)
+        addArrangedSubview(daysComponent)
+        addArrangedSubview(SeparatorLabel())
+        addArrangedSubview(hoursComponent)
+        addArrangedSubview(SeparatorLabel())
+        addArrangedSubview(minutesComponent)
+        addArrangedSubview(SeparatorLabel())
+        addArrangedSubview(secondsComponent)
     }
     
     func setupLayout() {

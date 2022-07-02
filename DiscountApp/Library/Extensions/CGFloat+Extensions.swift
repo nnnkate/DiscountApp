@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Adaptive layout
+
 extension CGFloat {
     var adaptedFontSize: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {

@@ -10,22 +10,22 @@ import UIKit
 // MARK: - Appearance methods
 
 extension UIView {
-    func addShadow() {
-        self.layer.borderWidth = 0
-        self.layer.shadowColor =  UIColor.getCustomPinkColor().cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.layer.shadowRadius = 15
-        self.layer.shadowOpacity = 0.9
+    func addShadow(color: CGColor, shadowRadius: CGFloat = 15, shadowOpacity: Float = 1) {
+        layer.borderWidth = 0
+        layer.shadowColor =  color
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowRadius = shadowRadius
+        layer.shadowOpacity = shadowOpacity
     }
     
     func applyGradient(colors: [CGColor], cornerRadius: CGFloat = 0) {
         let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
+        gradient.frame = bounds
         gradient.cornerRadius = 15
-        gradient.position = self.center
+        gradient.position = center
         gradient.colors = colors
         
-        self.layer.insertSublayer(gradient, at: 0)
+        layer.insertSublayer(gradient, at: 0)
     }
 }
 
@@ -46,7 +46,7 @@ extension UIView {
             height = 18.verticalAdapted
         }
             
-        self.layer.bounds = CGRect(x: 0, y: 0, width: self.bounds.width, height: height)
-        self.layer.add(animation, forKey: CATransitionType.push.rawValue)
+        layer.bounds = CGRect(x: 0, y: 0, width: self.bounds.width, height: height)
+        layer.add(animation, forKey: CATransitionType.push.rawValue)
     }
 }

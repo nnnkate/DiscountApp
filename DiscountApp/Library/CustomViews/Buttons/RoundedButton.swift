@@ -11,10 +11,10 @@ final class RoundedButton: UIButton {
     
     // MARK: - Initialization and deinitialization
     
-    init(cornerRadius: CGFloat = 12, width: CGFloat, height: CGFloat, applyGradient: Bool = true) {
+    init(color: CGColor, cornerRadius: CGFloat = 12, width: CGFloat, height: CGFloat, applyGradient: Bool = true) {
         super.init(frame: .zero)
         
-        self.setupAppearance(cornerRadius: cornerRadius, width: width, height: height, applyGradient: applyGradient)
+        self.setupAppearance(color: color, cornerRadius: cornerRadius, width: width, height: height, applyGradient: applyGradient)
     }
     
     required init?(coder: NSCoder) {
@@ -25,17 +25,18 @@ final class RoundedButton: UIButton {
 // MARK: - Appearance methods
 
 private extension RoundedButton {
-    func setupAppearance(cornerRadius: CGFloat, width: CGFloat, height: CGFloat, applyGradient: Bool) {
-        self.frame = CGRect(x: 0, y: 0, width: width, height: height)
-        self.layer.cornerRadius = cornerRadius
+    func setupAppearance(color: CGColor, cornerRadius: CGFloat, width: CGFloat, height: CGFloat, applyGradient: Bool) {
+        frame = CGRect(x: 0, y: 0, width: width, height: height)
+        layer.cornerRadius = cornerRadius
 
-        self.addShadow()
+        addShadow(color: color)
         
-        self.setTitleColor(.white, for: .normal)
-        self.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        setTitleColor(.white, for: .normal)
+        titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
 
         if applyGradient {
-            self.applyGradient(colors: [UIColor.getCustomBlueColor().cgColor, UIColor.getCustomPinkColor().cgColor],
+            self.applyGradient(colors: [UIColor.getCustomBlueColor().cgColor,
+                                        UIColor.getCustomPinkColor().cgColor],
                                cornerRadius: cornerRadius)
         }
     }

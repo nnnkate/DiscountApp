@@ -11,7 +11,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
          
@@ -54,7 +53,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 private extension SceneDelegate {
     func initializeRootView(scene: UIWindowScene) {
         let window = UIWindow(windowScene: scene)
-        window.rootViewController = ViewController()
+        window.rootViewController = OfferViewController()
         window.makeKeyAndVisible()
         self.window = window
     }

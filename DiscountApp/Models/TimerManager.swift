@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TimerManager {
+final class TimerManager {
     
     // MARK: - Public properties
     
@@ -15,9 +15,8 @@ class TimerManager {
     
     // MARK: - Private properties
     
-    private var timer = Timer()
-    private var timerCounter = 24 * 60 * 60
-    
+    private lazy var timer = Timer()
+    private lazy var timerCounter = 24 * 60 * 60
 }
 
 // MARK: - Timer manipulations methods

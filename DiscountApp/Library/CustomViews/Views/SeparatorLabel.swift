@@ -14,7 +14,7 @@ class SeparatorLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        setupAppearance()
+        self.setupAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -26,14 +26,14 @@ class SeparatorLabel: UILabel {
 
 private extension SeparatorLabel {
     func setupAppearance() {
-        self.font = .systemFont(ofSize: 15, weight: .bold)
-        self.textColor = .white
-        self.text = ":"
-        self.adjustsFontSizeToFitWidth = true
-        self.minimumScaleFactor = 0.5
-        self.numberOfLines = 1
+        font = .systemFont(ofSize: 15, weight: .bold)
+        textColor = .white
+        text = ":"
+        adjustsFontSizeToFitWidth = true
+        minimumScaleFactor = 0.5
+        numberOfLines = 1
         
-        self.setContentHuggingPriority(.required, for: .horizontal)
-        self.setContentCompressionResistancePriority(.required, for: .horizontal)
+        setContentHuggingPriority(.required, for: .horizontal)
+        setContentCompressionResistancePriority(.required, for: .horizontal)
     }
 }
