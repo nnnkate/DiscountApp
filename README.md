@@ -1,6 +1,9 @@
 # DiscountApp
 
+***For reviewers:*** *I didn't use size classes here because we don't need to rotate the screen ("App must work only in Landscape orientation").*
+
 The app shows some special offer/discount to user. After activating this offer, app displays
 popup screen with exact time when this offer was activated.
+The app was written in MVC architecture.
 
 ![](https://user-images.githubusercontent.com/70803144/177036558-483f0760-dc5b-4712-b4f9-bc6f77bbe75d.gif)
