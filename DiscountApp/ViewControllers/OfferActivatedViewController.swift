@@ -82,15 +82,10 @@ class OfferActivatedViewController: UIViewController {
     }
     
     func getActivationTimeString() -> String {
-        var activationTimeComponentString = ""
-        if activationTimeComponent.days != 0 {
-            activationTimeComponentString += String(format: "%02d", activationTimeComponent.days) + ":"
-        }
-        if activationTimeComponent.hours != 0 {
-            activationTimeComponentString += String(format: "%02d", activationTimeComponent.hours) + ":"
-        }
-        if activationTimeComponent.minutes != 0 {
-            activationTimeComponentString += String(format: "%02d", activationTimeComponent.minutes) + ":"
+        let activationTimeComponentArray = [activationTimeComponent.days, activationTimeComponent.hours, activationTimeComponent.minutes]
+       
+        var activationTimeComponentString = activationTimeComponentArray.reduce("") {
+            $0 + ($1 != 0 ? String(format: "%02d", $1) + ":" : "")
         }
         
         activationTimeComponentString += String(format: "%02d", activationTimeComponent.seconds)

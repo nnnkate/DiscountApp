@@ -12,14 +12,14 @@ class OfferViewController: UIViewController {
     
     // MARK: - Private properties
     
+    private let isPad = UIDevice.current.userInterfaceIdiom == .pad
+    
     private lazy var offerManager: OfferManager = {
         let offerManager = OfferManager()
         offerManager.delegate = self
 
         return offerManager
     }()
-    
-    private let isPad = UIDevice.current.userInterfaceIdiom == .pad
     
     private lazy var activateOfferButtonWidth: CGFloat = {
         return (isPad ? 403 : 300).verticalAdapted
@@ -258,6 +258,8 @@ extension OfferViewController: TimerDelegate {
 
 private extension OfferViewController {
     func handleActivateOfferButton() {
+        if offerManager.getTimerCounter() == 0 { return }
+        
         offerManager.activateOffer { [weak self] activationCounter in
             self?.showOfferActivatedViewController(activationCounter)
         }

@@ -5,8 +5,6 @@
 //  Created by Ekaterina Nedelko on 3.07.22.
 //
 
-import Foundation
-
 final class OfferManager {
    
     // MARK: - Public properties
@@ -27,11 +25,14 @@ final class OfferManager {
    // MARK: - Public methods
     
     func activateOffer(completion: @escaping ((Int) -> ())) {
-        cancelTimer()
-        activationCounter = getTimerCounter()
         if let activationCounter = activationCounter {
             completion(activationCounter)
+            return
         }
+        
+        cancelTimer()
+        activationCounter = getTimerCounter()
+        completion(activationCounter ?? 0)
     }
 }
 

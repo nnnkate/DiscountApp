@@ -35,8 +35,7 @@ private extension RoundedButton {
         titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
 
         if applyGradient {
-            self.applyGradient(colors: [UIColor.getCustomBlueColor().cgColor,
-                                        UIColor.getCustomPinkColor().cgColor],
+            self.applyGradient(colors: [UIColor.getCustomBlueColor().cgColor, UIColor.getCustomPinkColor().cgColor],
                                cornerRadius: cornerRadius)
         }
     }

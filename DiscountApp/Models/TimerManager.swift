@@ -15,15 +15,16 @@ final class TimerManager {
     
     // MARK: - Private properties
     
-    private lazy var timer = Timer()
-    private(set) lazy var timerCounter = 24 * 60 * 60
+    private var timer = Timer()
+    private let timerCounterInitialValue = 24 * 60 * 60
+    private(set) lazy var timerCounter = timerCounterInitialValue
 }
 
 // MARK: - Timer manipulations methods
 
 extension TimerManager {
     func startTimer() {
-        timerCounter = 24 * 60 * 60
+        timerCounter = timerCounterInitialValue
         timer = Timer.scheduledTimer(timeInterval: 1.0,
                                      target: self,
                                      selector: #selector(timerAction),
