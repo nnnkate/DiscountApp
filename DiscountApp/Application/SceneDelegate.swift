@@ -53,7 +53,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 private extension SceneDelegate {
     func initializeRootView(scene: UIWindowScene) {
         let window = UIWindow(windowScene: scene)
-        window.rootViewController = OfferViewController()
+        window.rootViewController = UINavigationController(rootViewController: OfferViewController())
         window.makeKeyAndVisible()
         self.window = window
     }

@@ -11,12 +11,12 @@ final class TimerManager {
     
     // MARK: - Public properties
     
-    weak var delegate: TimerManagerDelegate?
+    weak var delegate: TimerDelegate?
     
     // MARK: - Private properties
     
     private lazy var timer = Timer()
-    private lazy var timerCounter = 24 * 60 * 60
+    private(set) lazy var timerCounter = 24 * 60 * 60
 }
 
 // MARK: - Timer manipulations methods

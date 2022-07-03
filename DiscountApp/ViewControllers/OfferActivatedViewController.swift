@@ -14,22 +14,25 @@ class OfferActivatedViewController: UIViewController {
     
     private let isPad = UIDevice.current.userInterfaceIdiom == .pad
     
+    private var activationTimeComponent: TimeComponents
+    
     // MARK: - Views
     
     private lazy var backgroundView: UIView = {
         var backgroundView = UIView()
         backgroundView.backgroundColor = .black
-        backgroundView.alpha = 0
+        backgroundView.alpha = 0.6
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBackgroundTap))
+        backgroundView.addGestureRecognizer(tapGestureRecognizer)
         
         return backgroundView
     }()
     
     private lazy var alertView: UIView = {
         let alertView = UIView()
-        alertView.layer.cornerRadius = 12
-        //alertStacktView.spacing = 5
-        
         alertView.backgroundColor = .getCustomDarkBlueColor()
+        alertView.layer.cornerRadius = 12
         
         return alertView
     }()
@@ -40,6 +43,7 @@ class OfferActivatedViewController: UIViewController {
         titleLabel.font = .systemFont(ofSize: fontSize, weight: .bold)
         titleLabel.textColor = .white
         titleLabel.text = "Great!"
+        
         titleLabel.addShadow(color: UIColor.white.cgColor, shadowRadius: 7, shadowOpacity: 0.5)
         
         return titleLabel
@@ -50,10 +54,23 @@ class OfferActivatedViewController: UIViewController {
         let fontSize = CGFloat(isPad ? 12 : 18).adaptedFontSize
         messageLabel.font = .systemFont(ofSize: fontSize, weight: .regular)
         messageLabel.textColor = .white
-        messageLabel.text = "Offer activated at"
+        messageLabel.text = "Offer activated at \(getActivationTimeString())"
         
         return messageLabel
     }()
+    
+    // MARK: - Initialization and deinitialization
+    
+    init(activationTimeComponent: TimeComponents) {
+        self.activationTimeComponent = activationTimeComponent
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UIViewController
     
@@ -62,6 +79,23 @@ class OfferActivatedViewController: UIViewController {
         
         addSubviews()
         setupLayout()
+    }
+    
+    func getActivationTimeString() -> String {
+        var activationTimeComponentString = ""
+        if activationTimeComponent.days != 0 {
+            activationTimeComponentString += String(format: "%02d", activationTimeComponent.days) + ":"
+        }
+        if activationTimeComponent.hours != 0 {
+            activationTimeComponentString += String(format: "%02d", activationTimeComponent.hours) + ":"
+        }
+        if activationTimeComponent.minutes != 0 {
+            activationTimeComponentString += String(format: "%02d", activationTimeComponent.minutes) + ":"
+        }
+        
+        activationTimeComponentString += String(format: "%02d", activationTimeComponent.seconds)
+        
+        return activationTimeComponentString
     }
 }
 
@@ -77,10 +111,14 @@ private extension OfferActivatedViewController {
     }
     
     func setupLayout() {
+        backgroundView.snp.makeConstraints { make in
+            make.top.leading.centerY.centerX.equalToSuperview()
+        }
+        
         alertView.snp.makeConstraints { make in
             make.centerY.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.38)
-            make.height.equalTo(alertView.snp.width).multipliedBy(0.4)
+            make.height.equalTo(alertView.snp.width).multipliedBy(0.47)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -92,5 +130,13 @@ private extension OfferActivatedViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(alertView.snp.centerY).offset(10.verticalAdapted)
         }
+    }
+}
+
+// MARK: - Actions
+
+private extension OfferActivatedViewController {
+    @objc func handleBackgroundTap() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

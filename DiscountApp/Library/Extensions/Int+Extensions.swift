@@ -7,12 +7,12 @@
 
 import UIKit
 
-// MARK: - TimerComponents
+// MARK: - TimeComponents
 
-typealias TimerComponents = (Int, Int, Int, Int)
+typealias TimeComponents = (days: Int, hours: Int, minutes: Int, seconds: Int)
 
 extension Int {
-    func getTimerComponents() -> TimerComponents {
+    func getTimeComponents() -> TimeComponents {
         var timerCounter = self
         let days = timerCounter / (24 * 60 * 60)
         timerCounter -= (days * (24 * 60 * 60))

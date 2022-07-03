@@ -22,7 +22,6 @@ class TimerComponentView: UIView {
         valueLabel.textAlignment = .center
         valueLabel.text = "00"
         
-        
         return valueLabel
     }()
     
@@ -46,7 +45,7 @@ class TimerComponentView: UIView {
 private extension TimerComponentView {
     func setupAppearance() {
         layer.cornerRadius = 12
-        backgroundColor = .darkGray
+        backgroundColor = UIColor.getCustomDarkGrayColor()
     }
     
     func addSubviews() {

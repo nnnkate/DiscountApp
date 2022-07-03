@@ -11,16 +11,12 @@ final class OfferManager {
    
     // MARK: - Public properties
     
-    weak var delegate: OfferManagerDelegate?
+    weak var delegate: TimerDelegate?
     
     // MARK: - Private properties
     
-    private lazy var isActivated = false {
-        didSet {
-            cancelTimer()
-        }
-    }
-    
+    private(set) var activationCounter: Int?
+
     private lazy var timerManager: TimerManager = {
         let timerManager = TimerManager()
         timerManager.delegate = self
@@ -30,14 +26,18 @@ final class OfferManager {
     
    // MARK: - Public methods
     
-    func activateOffer() {
-        isActivated = true
+    func activateOffer(completion: @escaping ((Int) -> ())) {
+        cancelTimer()
+        activationCounter = getTimerCounter()
+        if let activationCounter = activationCounter {
+            completion(activationCounter)
+        }
     }
 }
 
-// MARK: - TimerManagerDelegate
+// MARK: - TimerDelegate
 
-extension OfferManager: TimerManagerDelegate {
+extension OfferManager: TimerDelegate {
     func updateTimer(_ timerCounter: Int) {
         delegate?.updateTimer(timerCounter)
     }
@@ -48,5 +48,9 @@ extension OfferManager: TimerManagerDelegate {
     
     func cancelTimer() {
         timerManager.cancelTimer()
+    }
+    
+    func getTimerCounter() -> Int {
+        timerManager.timerCounter
     }
 }

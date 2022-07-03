@@ -12,13 +12,6 @@ class OfferViewController: UIViewController {
     
     // MARK: - Private properties
     
-//    private lazy var timerManager: TimerManager = {
-//        let timerManager = TimerManager()
-//        timerManager.delegate = self
-//        
-//        return timerManager
-//    }()
-    
     private lazy var offerManager: OfferManager = {
         let offerManager = OfferManager()
         offerManager.delegate = self
@@ -249,17 +242,15 @@ private extension OfferViewController {
        additionalOptionsStackView.snp.makeConstraints { make in
             make.top.equalTo(activateOfferButton.snp.bottom).offset(20.verticalAdapted)
             make.centerX.equalTo(activateOfferButton.snp.centerX)
-            //make.height.equalTo((isPad ? 18 : 12).verticalAdapted)
-            //make.bottom.equalToSuperview().offset(-30.verticalAdapted)
         }
     }
 }
 
-// MARK: - OfferManagerDelegate
+// MARK: - TimerDelegate
 
-extension OfferViewController: OfferManagerDelegate {
+extension OfferViewController: TimerDelegate {
     func updateTimer(_ timerCounter: Int) {
-        timerStackView.updadeTimerComponents(with: timerCounter.getTimerComponents())
+        timerStackView.updadeTimeComponents(with: timerCounter.getTimeComponents())
     }
 }
 
@@ -267,20 +258,22 @@ extension OfferViewController: OfferManagerDelegate {
 
 private extension OfferViewController {
     func handleActivateOfferButton() {
-        offerManager.activateOffer()
-        
-        showOfferActivatedViewController()
+        offerManager.activateOffer { [weak self] activationCounter in
+            self?.showOfferActivatedViewController(activationCounter)
+        }
     }
 }
 
 // MARK: - OfferActivatedViewController
 
 private extension OfferViewController {
-    func showOfferActivatedViewController() {
-        let offerActivatedViewController = OfferActivatedViewController()
-        self.addChild(offerActivatedViewController)
-        self.view.addSubview(offerActivatedViewController.view)
+    func showOfferActivatedViewController(_ activationCounter: Int) {
+        let activationTimeComponent = activationCounter.getTimeComponents()
+        let offerActivatedViewController = OfferActivatedViewController(activationTimeComponent: activationTimeComponent)
+        offerActivatedViewController.modalPresentationStyle = .overCurrentContext
+        offerActivatedViewController.modalTransitionStyle = .crossDissolve
+        
+        self.navigationController?.present(offerActivatedViewController, animated: true)
     }
 }
-
 

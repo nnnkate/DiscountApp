@@ -69,10 +69,10 @@ private extension TimerStackView {
 // MARK: - Timer update methods
 
 extension TimerStackView {
-    func updadeTimerComponents(with components: TimerComponents) {
-        daysComponent.updateValueLabel(with: components.0)
-        hoursComponent.updateValueLabel(with: components.1)
-        minutesComponent.updateValueLabel(with: components.2)
-        secondsComponent.updateValueLabel(with: components.3)
+    func updadeTimeComponents(with components: TimeComponents) {
+        daysComponent.updateValueLabel(with: components.days)
+        hoursComponent.updateValueLabel(with: components.hours)
+        minutesComponent.updateValueLabel(with: components.minutes)
+        secondsComponent.updateValueLabel(with: components.seconds)
     }
 }

@@ -21,4 +21,8 @@ extension UIColor {
     class func getCustomDarkBlueColor() -> UIColor {
         UIColor(red: 0, green: 0.05, blue: 0.30, alpha: 1)
     }
+    
+    class func getCustomDarkGrayColor() -> UIColor {
+        UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1)
+    }
 }
