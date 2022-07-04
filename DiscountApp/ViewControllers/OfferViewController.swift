@@ -11,9 +11,7 @@ import SnapKit
 class OfferViewController: UIViewController {
     
     // MARK: - Private properties
-    
-    private let isPad = UIDevice.current.userInterfaceIdiom == .pad
-    
+
     private lazy var offerManager: OfferManager = {
         let offerManager = OfferManager()
         offerManager.delegate = self

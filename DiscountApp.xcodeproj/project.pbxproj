@@ -18,6 +18,7 @@
 		8533AF9A286E359800855B5D /* TimerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533AF99286E359800855B5D /* TimerDelegate.swift */; };
 		8533AF9C286E3A2A00855B5D /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533AF9B286E3A2A00855B5D /* Int+Extensions.swift */; };
 		8533AF9E286E3D5900855B5D /* TimerComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8533AF9D286E3D5900855B5D /* TimerComponentView.swift */; };
+		858717FA2872E46400BC6440 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858717F92872E46400BC6440 /* UIViewController+Extensions.swift */; };
 		85931008286F9FBC008549D9 /* OfferActivatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85931007286F9FBB008549D9 /* OfferActivatedViewController.swift */; };
 		8593101A28706BED008549D9 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8593101928706BED008549D9 /* CGFloat+Extensions.swift */; };
 		85EF39F0286CA12500BDFC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF39EF286CA12500BDFC60 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		8533AF99286E359800855B5D /* TimerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDelegate.swift; sourceTree = "<group>"; };
 		8533AF9B286E3A2A00855B5D /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		8533AF9D286E3D5900855B5D /* TimerComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponentView.swift; sourceTree = "<group>"; };
+		858717F92872E46400BC6440 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		85931007286F9FBB008549D9 /* OfferActivatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferActivatedViewController.swift; sourceTree = "<group>"; };
 		8593101928706BED008549D9 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		85EF39EC286CA12500BDFC60 /* DiscountApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscountApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 		8533AF8C286CC29500855B5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				858717F92872E46400BC6440 /* UIViewController+Extensions.swift */,
 				8533AF8D286CC2AB00855B5D /* UIView+Extensions.swift */,
 				8533AF8F286DDED700855B5D /* UIColor+Extensions.swift */,
 				8533AF9B286E3A2A00855B5D /* Int+Extensions.swift */,
@@ -326,6 +329,7 @@
 				8533AF9C286E3A2A00855B5D /* Int+Extensions.swift in Sources */,
 				8533AF9E286E3D5900855B5D /* TimerComponentView.swift in Sources */,
 				85EF39F4286CA12500BDFC60 /* OfferViewController.swift in Sources */,
+				858717FA2872E46400BC6440 /* UIViewController+Extensions.swift in Sources */,
 				8533AF90286DDED800855B5D /* UIColor+Extensions.swift in Sources */,
 				8533AF96286E307000855B5D /* TimerManager.swift in Sources */,
 				8533AF8B286CBF9C00855B5D /* RoundedButton.swift in Sources */,

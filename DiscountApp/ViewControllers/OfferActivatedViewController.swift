@@ -12,8 +12,6 @@ class OfferActivatedViewController: UIViewController {
     
     // MARK: - Private properties
     
-    private let isPad = UIDevice.current.userInterfaceIdiom == .pad
-    
     private var activationTimeComponent: TimeComponents
     
     // MARK: - Views
